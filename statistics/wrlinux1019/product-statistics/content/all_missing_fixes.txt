@@ -122,6 +122,7 @@ installed_OS_is_vendor_supported
 iptables_sshd_disabled
 kernel_config_acpi_custom_method
 kernel_config_binfmt_misc
+kernel_config_bug
 kernel_config_compat_brk
 kernel_config_compat_vdso
 kernel_config_debug_credentials
@@ -145,6 +146,8 @@ kernel_config_module_sig_sha512
 kernel_config_page_poisoning_no_sanity
 kernel_config_page_poisoning_zero
 kernel_config_page_table_isolation
+kernel_config_panic_on_oops
+kernel_config_panic_timeout
 kernel_config_proc_kcore
 kernel_config_randomize_base
 kernel_config_randomize_memory
