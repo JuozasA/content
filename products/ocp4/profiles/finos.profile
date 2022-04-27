@@ -2,7 +2,7 @@ documentation_complete: true
 
 title: 'finos benchmark - for testing only'
 
-platform: ocp4, 
+platform: ocp4
 
 metadata: {}
 
