@@ -1,0 +1,41 @@
+prodtype: ocp4
+
+title: Ensure that the cluster was installed with Network type - OVNKubernetes
+
+description: |-
+  OpenShift has an installation-time parameter which defines what network type 
+  will be used on the cluster. The parameter <pre>networking.networkType: OVNKubernetes</pre> must be specified
+  at install time in the <pre>install-config.yaml</pre> file.
+  
+rationale: |-
+  Use of weak or untested encryption algorithms undermines the purposes of utilizing encryption to
+  protect data. The system must implement cryptographic modules adhering to the higher
+  standards approved by the federal government since this provides assurance they have been tested
+  and validated.
+
+identifiers: {}
+
+references: {}
+
+ocil_clause: 'Network Type is not OVNKubernetes'
+
+ocil: |-
+    Run the following command to retrieve if the Network Type is OVNKubernetes:
+    <pre>$ oc get network cluster -ojsonpath='{.spec.networkType}'</pre>
+    Make sure that the result is 'OVNKubernetes'.
+
+severity: high
+
+warnings:
+- general: |-
+    {{{ openshift_cluster_setting("/apis/config.openshift.io/v1/networks/cluster") | indent(4) }}}
+
+template:
+  name: yamlfile_value
+  vars:
+    ocp_data: "true"
+    filepath: /apis/config.openshift.io/v1/networks/cluster
+    yamlpath: ".spec.networkType"
+    values:
+    - value: "OVNKubernetes"
+      type: string
