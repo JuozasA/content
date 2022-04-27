@@ -2,11 +2,9 @@ documentation_complete: true
 
 title: 'finos benchmark - for testing only'
 
-platform: ocp4
+platform: ocp4, 
 
-metadata:
-    SMEs:
-        - jhrozek
+metadata: {}
 
 reference: https://github.com/finos/compliant-financial-infrastructure/blob/dev/accelerators/kubernetes/ocp/sat_rh_ocp.adoc
 
@@ -20,6 +18,8 @@ selections:
 
     ### FIPS
     - fips_mode_enabled
+
+    ### OVN Network Type
     - network_type_ovn_kubernetes
 
     ### etcd encryption and check etcd cipher suites
